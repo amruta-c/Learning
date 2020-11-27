@@ -1,1 +1,2 @@
 # Learning
+Brief about technology
