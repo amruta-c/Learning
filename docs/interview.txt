@@ -1,0 +1,242 @@
+Introduce urself
+
+Pillars of OOPs
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+
+Polymorphism and types
+The word polymorphism means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form. A real-life example of polymorphism, a person at the same time can have different characteristics. Like a man at the same time is a father, a husband, an employee. So the same person posses different behavior in different situations. This is called polymorphism. Polymorphism is considered as one of the important features of Object Oriented Programming.
+
+In C++ polymorphism is mainly divided into two types:
+
+Compile time Polymorphism
+Runtime Polymorphism
+Compile time polymorphism: This type of polymorphism is achieved by function overloading or operator overloading.
+Runtime polymorphism: This type of polymorphism is achieved by Function Overriding.
+
+
+Abstract classes and interfaces
+Strings
+
+
+Marker Interfaces
+It is an empty interface (no field or methods). Examples of marker interface are Serialisable, Clone-able and Remote interface. All these interfaces are empty interfaces.
+
+Why Would You Opt For Micro-services Architecture?
+A very common micro-services interview question which you should be ready for! There are plenty of pros that are offered by Micro services architecture. Here are a few of them:
+
+Micro-services can adapt easily to other frameworks or technologies.
+Failure of a single process does not affect the entire system.
+Provides support to big enterprises as well as small teams.
+Can be deployed independently and in relatively less time.
+
+
+Q1. What Is Spring Boot and What Are Its Main Features?
+Spring Boot is essentially a framework for rapid application development built on top of the Spring Framework. With its auto-configuration and embedded application server support,
+combined with the extensive documentation and community support it enjoys, Spring Boot is one of the most popular technologies in the Java ecosystem as of date.
+
+Here are a few salient features:
+
+Starters – a set of dependency descriptors to include relevant dependencies at a go
+Auto-configuration – a way to automatically configure an application based on the dependencies present on the classpath
+Actuator – to get production-ready features such as monitoring
+Security
+Logging
+
+How does Spring Boot works?
+Spring Boot automatically configures your application based on the dependencies you have added to the project by using annotation. The entry point of the spring boot application is the class that contains @SpringBootApplication annotation and the main method.
+
+Spring Boot automatically scans all the components included in the project by using @ComponentScan annotation.
+
+
+How to disable a specific auto-configuration class?
+You can use exclude attribute of @EnableAutoConfiguration if you want auto-configuration not to apply to any specific class.
+
+//use of exclude
+@EnableAutoConfiguration(exclude={className})
+
+Q4. What Is Spring Initializr?
+Spring Initializr is a convenient way to create a Spring Boot project.
+
+We can go to the Spring Initializr site, choose a dependency management tool (either Maven or Gradle), a language (Java, Kotlin or Groovy), a packaging scheme (Jar or War),
+version and dependencies, and download the project.
+
+This creates a skeleton project for us and saves setup time so that we can concentrate on adding business logic.
+
+Even when we use our IDE's (such as STS or Eclipse with STS plugin) new project wizard to create a Spring Boot project, it uses Spring Initializr under the hood.
+
+
+Q15. What Is Spring Boot Actuator Used For?
+Essentially, Actuator brings Spring Boot applications to life by enabling production-ready features.
+ These features allow us to monitor and manage applications when they're running in production.
+
+Do you know what's CI CD?
+
+CI/CD emphasize the automation of activities carried along the software-defined life cycle from building to delivery.
+DevOps refers core set of practices for quality software development and focus on culture that removes barriers between operations and engineering team.
+
+Explain OAuth.
+ Generally speaking, OAuth (Open Authorization Protocol) enables users to authenticate themselves with third-party service providers.
+ With this protocol, you can access client applications on HTTP for third-party providers such as GitHub, Facebook, etc. Using it,
+ you can also share resources on one site with another site without requiring their credentials.
+
+ What do you mean by end-to-end microservices testing?
+ Usually, end-to-end (E2E) microservice testing is an uncoordinated, high-cost technique that is used to ensure that all components work together for a complete user journey.
+ Usually, it is done through the user interface, mimicking how it appears to the user. It also ensures all processes in the workflow are working properly.
+
+
+ can we use final and abstract at a time, yes or no why?
+
+ Because, final and abstract are totally opposite in nature. A final class or method cannot be modified further where as abstract class or method must be modified further.
+ “final” keyword is used to denote that a class or method does not need further improvements. “abstract” keyword is used to denote that a class or method needs further improvements.
+
+ Can we declare abstract methods as synchronised?
+
+ No, abstract methods cannot be declared as synchronised. But methods which override abstract methods can be declared as synchronised.
+
+ KAFKA:
+ What's the difference between KafkaMessageListenerContainer and ConcurrentMessageListenerContainer?
+
+ A KafkaMessageListenerContainer receives messages for all topics and partitions on a single thread. A ConcurrentMessageListenerContainer is a collection of KafkaMessageListenerContainer instances. It distributes message consumption across multiple threads.
+
+ Explain the role of the offset.
+
+ Ans. There is a sequential ID number given to the messages in the partitions what we call, an offset. So, to identify each message in the partition uniquely, we use these offsets.
+
+
+ What do you know about Partition in Kafka?
+
+ Ans. In every Kafka broker, there are few partitions available. And, here each partition in Kafka can be either a leader or a replica of a topic.
+
+
+ What maximum message size can the Kafka server receive?
+ The maximum message size that Kafka server can receive is 10 lakh bytes.
+
+ What is the consumer lag?
+
+ Ans Reads in Kafka lag behind Writes as there is always some delay between writing and consuming the message. This delta between the consuming offset and the latest offset is called consumer lag.
+
+ MYSQL:
+
+ What is a View?
+ A view is a virtual table which consists of a subset of data contained in a table. Views are not virtually present, and it takes less space to store. View can have data of one or more tables combined, and it is depending on the relationship.
+
+ What is an Index?
+ An index is performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and it will be faster to retrieve data.
+
+ Which operator is used in query for pattern matching?
+ LIKE operator is used for pattern matching, and it can be used as -.
+
+ % – Matches zero or more characters.
+ _(Underscore) – Matching exactly one character.
+ Example -.
+
+ Select * from Student where studentname like 'a%'
+ Select * from Student where studentname like 'ami_
+
+ Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from Worker table.
+ Ans.
+
+ The required query is:
+
+ Select INSTR(FIRST_NAME, BINARY'a') from Worker where FIRST_NAME = 'Amitabh';
+
+
+  Can a primary key be dropped in MySQL? If yes, how?
+
+ Yes, it is possible to drop the primary key from a table. The command to use is again, the ALTER TABLE followed by DROP. It goes like this:
+
+ ALTER TABLE table_name DROP PRIMARY KEY;
+
+
+ What is a LIKE statement? Explain % and _ in LIKE.
+
+ While using filters in commands like SELECT, UPDATE, and DELETE, conditions might require a pattern to detect. LIKE is used to do just that. LIKE has two wildcard characters, namely % (percentage) and _ (underscore). Percentage(%) matches a string of characters, while underscore matches a single character.
+
+ For example, %t will detect trees and tea both. However, _t will only detect one extra character, i.e., strings like ti or te.
+
+
+ What are the differences between a primary key and a foreign key?
+
+ Answer: The database table uses a primary key to identify each row uniquely. It is necessary to declare the primary key on those tables that require to create a relationship among them. One or more fields of a table can be declared as the primary key.
+
+ When the primary key of any table is used in another table as the primary key or another field for making a database relation, then it is called a foreign key.
+
+ The differences between these two keys are mentioned below:
+
+ The primary key uniquely identifies a record, whereas foreign key refers to the primary key of another table.
+ The primary key can never accept a NULL value but foreign key accepts a NULL value.
+ When a record is inserted in a table that contains the primary key then it is not necessary to insert the value on the table that contains this primary key field as the foreign key.
+ When a record is deleted from the table that contains the primary key then the corresponding record must be deleted from the table containing the foreign key for data consistency. But any record can be deleted from the table that contains a foreign key without deleting a related record of another table.
+
+
+ Two tables named manufacturers and items will be created after executing the following two SQL commands.
+
+ Here, the primary key of the manufacturer’s table is used as a foreign key in the items table with the field name manufacturer_id. Hence, the manufacturer_id field will contain only those values that exist in the manufacturer’s table.
+
+ example :
+ CREATE TABLE manufacturers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50));
+ CREATE TABLE items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    type VARCHAR(50),
+    brand VARCHAR(50),
+    manufacturer_id INT,
+    FOREIGN KEY (manufacturer_id) REFERENCES manufacturers(id));
+
+    What is the purpose of using the TIMESTAMP data type?
+
+ Answer: A TIMESTAMP data type is used to store the combination of date and time value which is 19 characters long.
+
+
+ Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ending with any sequence of characters.
+ Ans. For this question, we can create an SQL query using like operator with ‘_’ and ‘%’ wild card characters, where ‘_’ matches a single character and ‘%’ matches ‘0 or multiple characters’.
+
+ SELECT FullName
+ FROM EmployeeDetails
+ WHERE FullName LIKE ‘__hn%’;
+
+
+ Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
+ Ans. Using sub query-
+
+ SELECT EmpId FROM
+ EmployeeDetails
+ where EmpId Not IN
+ (SELECT EmpId FROM EmployeeSalary);
+
+
+ REDIS:
+ What is the meaning of Redis?
+ Redis stands for REmote DIctionary Server.
+
+ What is Redis?
+Redis is an open-source, advance key value data store and cache. It is also referred as a data structure server which keys not only contains strings, but also hashes, sets, lists, and sorted sets.
+
+
+How is Redis different from other databases?
+Redis is a NoSQL, Opensource, in-memory data-structure store. It follows the principle of key-value store.
+It is extremely fast, persistent, portable and supports many languages such as C, C++, C#, Clojure, Common Lisp, D, Dart, Erlang, Go, Haskell, Haxe, Io, Java, JavaScript (Node.js),
+Julia, Lua, Objective-C, Perl, PHP, Pure Data, Python, R, Racket, Ruby, Rust, Scala, Smalltalk and Tcl.
+
+
+How to interect with Redis?
+After the installation of the server you can run the Redis Client provided by redis installation or you can open the command prompt and use the following command:
+
+redis-cli
+By using any of them, you can interect with Redis.
+
+In which language Redis is written?
+Redis is written in ANSI C and mostly used for cache solution and session management. It creates unique keys for store values.
+
+
+Senior Engineer::::
+
+How are u doing kafka load partitioning?
+Aggregation logic in kafka streams?
+If u r exposing any service to vendor/external person, what are the security u will add?
+

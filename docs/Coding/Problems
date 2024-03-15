@@ -1,0 +1,64 @@
+//Palindrome
+
+pubic class Palindrome {
+	public static void main(String[] args) {
+		String input = "";
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter a string: ");
+		input = scanner.nextLine();
+		String output = isPalindrome(input);
+		System.out.println("The given string is: " + output);
+	}
+
+	public static String isPalindrome(String str) {
+		String copyStr = "";
+		for(int i = str.length()-1; i>=0; i--) {
+			copyStr+= str.charAt(i);
+		}
+		return (str.equals(copyStr))? "Palindrome" : "Not Palindrome";
+	}
+
+}
+
+//Anagram
+public class Anagram {
+	public static void main(String[] args) {
+		String input1, input2 = "";
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter a string1: ");
+		input1 = scanner.nextLine();
+		System.out.println("Enter a string2: ");
+		input2 = scanner.nextLine();
+		String output = isAnagram(input1, input2);
+		System.out.println("The given strings are: " + output);
+	}
+
+	public static String isAnagram(String s1, String s2) {
+		s1.toLowerCase();
+		s2.toLowerCase();
+		if(s1.length() == s2.length()) {
+			char[] arr1 = s1.toCharArray();
+			char[] arr2 = s2.toCharArray();
+			return (Arrays.equals(arr1, arr2))? "Anagram to each other" : "not Anagram to each other";
+		} else {
+			return "not Anagram to each other";
+		}
+	}
+}
+
+//Convert String to integer without using inbuilt functions
+public class StringToInteger {
+	public static void main(String[] args) {
+		int output = convertStringToInteger("1234");
+		System.out.println(output);
+	}
+
+	public static int convertStringToInteger(String str) {
+		int output = 0;
+		for(int i = 0; i< str.length(); i++) {
+			output = output*10 + (str.charAt(i) - 48);
+		}
+		return output;
+	}
+}
+

@@ -1,0 +1,50 @@
+public class Test {
+	public static void main(String[] args) {
+		new Thread(()-> {
+			printString("Aksuu");
+		}).start();
+		new Thread(()-> {
+			printString("Ammuu");
+		}).start();
+	}
+	public static String printString(String s) {
+		String updatedString = "Hi "+s;
+		System.out.println(updatedString);
+		return updatedString;
+	}
+}
+
+public class Test1 throws InterruptedException {
+	private static ExecutorService executorService = Executors.newFixedThreadPool(10); 
+	public static void main(String[] args){
+		for(int i=0; i<10; i++){
+			int id = i;
+			threadPool.submit(()-> {
+				String birthDate = "2022-08-01";
+				System.out.println(birthDate); 
+			});
+		}
+		Thread.sleep(1000);
+		executorService.shutdownNow();
+	}
+}
+
+class ThreadSafeFormatter {
+	public static ThreadLocal<SimpleDateFormatter> df = ThreadLocal.withInitial(()-> SimpleDateFormatter("YYYY-mm-dd"));
+}
+
+public class Test3 {
+	private static ExecutorService excecutorService = Executors.newFixedThreadPool(10);
+	public static void main(String[] args){
+		excecutorService.submit(()->{
+			String date = getDate("2022-01-01");
+			System.out.println("Date: "+ date);
+		})
+		ThreadSafeFormatter.df.remove(); //Clean up
+	 }
+	 public String getDate(String date){
+	 	Date date1 = getDateFromDb(date);
+	 	final SimpleDateFormat df = ThreadSafeFormatter.df.get();
+	 	return df.format(date1);
+	 }	
+}
